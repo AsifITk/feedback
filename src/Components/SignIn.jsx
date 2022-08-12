@@ -39,7 +39,7 @@ function SignIn({ setUser }) {
                 <button onClick={() => signin(emailRef.current.value, passwordRef.current.value)}>Sign in</button>
 
 
-
+                <button onClick={() => goTo(`/signup`)}>Sign up</button>
 
 
             </div>
