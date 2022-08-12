@@ -23,6 +23,13 @@ function Profile() {
         setComments(() => allComments.data());
         console.log(userComments);
     };
+    let getRealtime = async () => {
+        const unsub = onSnapshot(doc(db, "comments", `${params.id}`), (doc) => {
+            setComments(() => doc.data())
+            console.log("Current data: ", doc.data());
+        });
+
+    }
     let removeComments = async (field) => {
         const commentsRef = doc(db, "comments", `${params.id}`);
 
@@ -35,20 +42,21 @@ function Profile() {
 
     useEffect(() => {
         getUser();
-        getComments();
+        // getComments();
+        getRealtime();
 
         console.log(userComments);
     }, []);
 
     return (
         <div className="profile-container">
-            {userDetails && userComments ? (
+            {userDetails ? (
                 <div className="profile-card">
                     <div className="user-name"> {userDetails.name}</div>
                     <div className="user-email"> {userDetails.email}</div>
 
                     <div className="comment-card">
-                        {Object.keys(userComments).map((key) => {
+                        {userComments && Object.keys(userComments).map((key) => {
                             return (
                                 <div key={key}>
                                     <div>{userComments[key]}</div>
@@ -66,9 +74,10 @@ function Profile() {
                             );
                         })}
                     </div>
+                    <button onClick={() => goTo(`/${userDetails.name}`)}>Get Comment link</button>
                 </div>
             ) : (
-                <div>Loading... <button onClick={() => goTo(`/${params.id}`)}>Get Comment link</button></div>
+                <div>Loading... <button onClick={() => goTo(`/${userDetails.name}`)}>Get Comment link</button></div>
             )}
         </div>
     );

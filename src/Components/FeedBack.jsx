@@ -18,6 +18,7 @@ function FeedBack() {
 
         if (docSnap.exists()) {
             setAllUsers(docSnap.data());
+
             console.log(docSnap.data());
         } else {
             // doc.data() will be undefined in this case
@@ -39,11 +40,18 @@ function FeedBack() {
                     <textarea name="" id="" cols="30" rows="10" ref={comment}></textarea>
                     <button
                         onClick={async () => {
-                            await setDoc(doc(db, "comments", `${allUsers[params.id]}`), {
+                            try {
+                                console.log("comment added")
+                                console.log(allUsers, params.id)
+                                await setDoc(doc(db, "comments", `${allUsers[params.id]}`), {
 
-                                [Date.now()]: comment.current.value,
+                                    [Date.now()]: comment.current.value,
 
-                            }, { merge: true });
+                                }, { merge: true });
+                            } catch (err) {
+                                console.log(err);
+                            }
+
                             // await updateDoc(doc(db, "users", `${allUsers[params.id]}`), {
                             //     'comments': {
                             //         [Date.now()]: comment.current.value,
