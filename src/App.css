@@ -1,38 +1,162 @@
-.App {
-  text-align: center;
+@import url(https://fonts.googleapis.com/css?family=Lily+Script+One:regular);
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* !sign-in */
+.signin-container {
+  width: 100vw;
+  height: 100vh;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  background: linear-gradient(to left, #fc4a1a, #f7b733);
+  font-family: "Lily Script One";
+}
+.signin-container h1 {
+  margin: 30px;
 }
 
-.App-link {
-  color: #61dafb;
+.signin-container .card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 350px;
+  height: 350px;
+  box-shadow: 1px 1px 10px 10px rgba(0, 0, 0, 0.2);
+  padding: 30px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.signin-container .card input {
+  border: none;
+  border-bottom: 5px solid rgb(173, 42, 42);
+  border-radius: 5px;
+}
+
+/* !Signup */
+.signup-container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(to left, #fc4a1a, #f7b733);
+  font-family: "Lily Script One";
+}
+.signup-container h1 {
+  margin: 30px;
+}
+.signup-container .card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 350px;
+  height: 350px;
+  box-shadow: 1px 1px 10px 10px rgba(0, 0, 0, 0.2);
+  padding: 30px;
+}
+
+.signup-container .card input {
+  border: none;
+  border-bottom: 5px solid rgb(173, 42, 42);
+  border-radius: 5px;
+}
+
+/* !feedback */
+.feedback-container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(to left, #fc4a1a, #f7b733);
+  font-family: "Lily Script One";
+}
+.feedback-container h1 {
+  margin: 30px;
+}
+.feedback-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 450px;
+  height: 450px;
+  box-shadow: 1px 1px 10px 10px rgba(0, 0, 0, 0.2);
+  padding: 30px;
+}
+.feedback-card textarea {
+  border: none;
+  border-bottom: 5px solid rgb(173, 42, 42);
+  border-radius: 5px;
+  color: #40e20e;
+}
+
+/* !profile */
+
+.profile-container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(to left, #1afc38, #33f76450);
+  font-family: "Lily Script One";
+}
+.profile-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-width: 450px;
+  min-height: 450px;
+  box-shadow: 1px 1px 10px 10px rgba(0, 0, 0, 0.2);
+  padding: 30px;
+  text-align: center;
+  border-radius: 5px;
+}
+.user-name {
+  font-size: 30px;
+  color: #252725af;
+}
+.user-email {
+  font-size: 20px;
+  color: #212e1d;
+  margin: 10px;
+}
+.comment-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  min-width: 450px;
+  min-height: 450px;
+  box-shadow: 1px 1px 10px 10px rgba(0, 0, 0, 0.2);
+  background: linear-gradient(to left, #1afc3849, #33f764a6);
+  border-radius: 5px;
+
+  padding: 30px;
+}
+.comment-card button {
+  background: linear-gradient(to left, #ee303091, #3361f7);
+  border: none;
+  border-radius: 5px;
+  color: #40e20e;
+  padding: 10px;
+  margin: 10px;
+}
+.comment-card button:hover {
+  background: linear-gradient(to left, #ee3030, #3361f7);
+  color: #40e20e;
+}
+.comment-card div:nth-child(odd) {
+  color: #3361f7;
+  font-size: large;
+}
+.comment-card div:nth-child(even) {
+  color: #f761337a;
+  font-size: small;
 }
