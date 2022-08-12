@@ -37,7 +37,7 @@ function Profile() {
         await updateDoc(commentsRef, {
             [field]: deleteField(),
         });
-        window.location.reload(false);
+        // window.location.reload(false);
     };
 
     useEffect(() => {
