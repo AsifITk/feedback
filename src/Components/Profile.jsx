@@ -74,10 +74,10 @@ function Profile() {
                             );
                         })}
                     </div>
-                    <button onClick={() => goTo(`/${userDetails.name}`)}>Get Comment link</button>
+                    <button className="profile-btn" onClick={() => goTo(`/${userDetails.name}`)}>Get Comment link</button>
                 </div>
             ) : (
-                <div>Loading... <button onClick={() => goTo(`/${userDetails.name}`)}>Get Comment link</button></div>
+                <div>Loading... <button className="profile-btn" onClick={() => goTo(`/${userDetails.name}`)}>Get Comment link</button></div>
             )}
         </div>
     );

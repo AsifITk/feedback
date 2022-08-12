@@ -119,6 +119,17 @@
   text-align: center;
   border-radius: 5px;
 }
+.profile-btn {
+  background: linear-gradient(to left, #1afc38, #33f76450);
+  border: none;
+  border-radius: 5px;
+  color: #030303;
+  padding: 10px;
+  margin: 10px;
+  font-size: 20px;
+  font-family: "Lily Script One";
+}
+
 .user-name {
   font-size: 30px;
   color: #252725af;
